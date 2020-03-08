@@ -1,8 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>cisc181.edu</groupId>
-  <artifactId>JavaFXHello</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>cisc181.edu</groupId>
+	<artifactId>JavaFXHello</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<build>
 		<plugins>
@@ -22,6 +24,8 @@
 				<artifactId>javafx-maven-plugin</artifactId>
 				<version>0.0.2</version>
 				<configuration>
+					<release>13</release>
+					<compilerArgs>--enable-preview</compilerArgs>
 					<mainClass>pkgMain.HelloFX</mainClass>
 				</configuration>
 			</plugin>
@@ -32,9 +36,9 @@
 
 		<!-- Generic properties -->
 		<JavaFX.Platform>win</JavaFX.Platform>
-<!-- 		<JavaFX.Platform>mac</JavaFX.Platform> -->
-<!-- 		<JavaFX.Platform>linux</JavaFX.Platform> -->
-		
+		<!-- <JavaFX.Platform>mac</JavaFX.Platform> -->
+		<!-- <JavaFX.Platform>linux</JavaFX.Platform> -->
+
 		<java.version>1.13</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -53,37 +57,37 @@
 		<junit.version>4.12</junit.version>
 
 	</properties>
-    <dependencies>
-    
-		
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>13</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-media</artifactId>
-            <version>13</version>
-            <classifier>${JavaFX.Platform}</classifier>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>13</version>
-            <classifier>${JavaFX.Platform}</classifier>
-        </dependency>
+	<dependencies>
 
 
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>13</version>
-        </dependency>
-    </dependencies>
-    
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-controls</artifactId>
+			<version>13</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-media</artifactId>
+			<version>13</version>
+			<classifier>${JavaFX.Platform}</classifier>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-graphics</artifactId>
+			<version>13</version>
+			<classifier>${JavaFX.Platform}</classifier>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.openjfx</groupId>
+			<artifactId>javafx-fxml</artifactId>
+			<version>13</version>
+		</dependency>
+	</dependencies>
+
 
 
 </project>
