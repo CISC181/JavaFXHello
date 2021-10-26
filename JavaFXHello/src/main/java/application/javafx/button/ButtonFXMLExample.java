@@ -23,12 +23,14 @@ public class ButtonFXMLExample extends Application {
 
         FXMLLoader loader = new FXMLLoader();
 
+    	loader = new FXMLLoader(getClass().getResource("/assets/fxml/button-example.fxml"));
+    	
+   	
         ButtonFXMLController controller = new ButtonFXMLController();
         loader.setController(controller);
 
-        File fxmlFile = new File("assets/fxml/button-example.fxml");
-        URL fxmlUrl = fxmlFile.toURI().toURL();
-        loader.setLocation(fxmlUrl);
+        
+        
 
         VBox vbox = loader.<VBox>load();
         Scene scene = new Scene(vbox);

@@ -1,6 +1,7 @@
 package application.javafx.imageview;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Label;
@@ -12,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class ImageViewExample extends Application {
 
@@ -21,16 +23,10 @@ public class ImageViewExample extends Application {
 
     public void start(Stage primaryStage) {
 
-        FileInputStream input = null;
-        try {
-            input = new FileInputStream("assets/media/abstract-5719221_640.jpg");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        Image image = new Image(input);
-        ImageView imageView = new ImageView(image);
-
-
+       
+        Image img= new Image(getClass().getResource("/assets/media/abstract-5719221_640.jpg").toString());
+        ImageView imageView = new ImageView(img);
+        
         VBox vBox = new VBox(imageView);
         Scene scene = new Scene(vBox);
 
@@ -38,4 +34,20 @@ public class ImageViewExample extends Application {
 
         primaryStage.show();
     }
+    
+    private InputStream getFileFromResourceAsStream(String fileName) {
+
+        // The class loader that loaded the class
+        ClassLoader classLoader = getClass().getClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream(fileName);
+
+        // the stream holding the file content
+        if (inputStream == null) {
+            throw new IllegalArgumentException("file not found! " + fileName);
+        } else {
+            return inputStream;
+        }
+
+    }
+    
 }

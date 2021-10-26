@@ -20,13 +20,12 @@ public class FXMLExample extends Application{
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
 
+    	loader = new FXMLLoader(getClass().getResource("/assets/fxml/hello-world.fxml"));
+    	
         MyFxmlController controller = new MyFxmlController();
         controller.setValue("New value");
         loader.setController(controller);
 
-        File fxmlFile = new File("assets/fxml/hello-world.fxml");
-        URL fxmlUrl = fxmlFile.toURI().toURL();
-        loader.setLocation(fxmlUrl);
 
         VBox vbox = loader.<VBox>load();
 

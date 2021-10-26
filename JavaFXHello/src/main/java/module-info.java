@@ -50,7 +50,7 @@ module JavaFXHello {
 	exports application.javafx.treetableview;
 	exports application.javafx.treeview;
 	exports application.javafx.vbox;
-	
+	exports application.javafx.ComboBoxListener;
 
 	requires javafx.base;
 	requires javafx.controls;

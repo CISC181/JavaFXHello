@@ -26,8 +26,14 @@ public class ButtonExample extends Application {
             System.out.println("Button clicked!");
         });
 
+        button.setOnMouseEntered((event) -> {
+            System.out.println("Entered!");
+        });
+
+        
 
         VBox vbox = new VBox(button);
+        vbox.getChildren().add(new Button("Test"));
         Scene scene = new Scene(vbox);
         primaryStage.setScene(scene);
         primaryStage.show();
